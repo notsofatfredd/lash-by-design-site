@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>The Lash Bed | Lash by Design</title>
+<meta name="theme-color" content="#4A1F33">
+<link rel="icon" href="../assets/img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="owner.css">
+<script src="owner.js" defer></script>
+</head>
+<body>
+
+<section class="login" id="login">
+  <div class="login-card">
+    <img src="../assets/img/logo/lash-by-design-icon-milkshake.png" alt="" width="600" height="620">
+    <p class="kicker">Lash by Design</p>
+    <h1>The Lash <i>Bed</i></h1>
+    <form id="login-form">
+      <label><span>Password</span><input type="password" name="password" autocomplete="current-password" required></label>
+      <button class="b b-milk" type="submit">Open</button>
+      <p class="err" id="login-err" role="alert" hidden></p>
+    </form>
+    <button class="b b-ghost" type="button" id="demo-btn" hidden>See it with sample data</button>
+    <p class="login-note" id="demo-note" hidden>Preview link: the studio’s real bookings only live on lashbydesign.co.za.</p>
+  </div>
+</section>
+
+<div class="app" id="app" hidden>
+  <header class="bar">
+    <div><p class="kicker">Lash by Design</p><h1>The Lash <i>Bed</i></h1></div>
+    <button class="icon-b" type="button" id="logout" aria-label="Log out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10"/></svg></button>
+  </header>
+  <p class="demo-flag" id="demo-flag" hidden>Sample data: nothing here is a real client.</p>
+
+  <main class="views">
+    <section class="view is-on" id="v-day" aria-label="Day">
+      <div class="day-nav">
+        <button class="icon-b" type="button" id="day-prev" aria-label="Previous day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="day-label" type="button" id="day-label"></button>
+        <button class="icon-b" type="button" id="day-next" aria-label="Next day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="stats" id="day-stats"></div>
+      <div class="list" id="day-list"></div>
+    </section>
+
+    <section class="view" id="v-infills" aria-label="Infills due">
+      <h2>Infills <i>due</i></h2>
+      <p class="sub" id="infill-sub">Clients whose last set or infill was a while back and who have nothing booked. One tap sends a WhatsApp nudge.</p>
+      <div class="list" id="infill-list"></div>
+    </section>
+
+    <section class="view" id="v-clients" aria-label="Clients">
+      <h2>Clients</h2>
+      <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="client-q" type="search" placeholder="Name or cell number" aria-label="Search clients"></label>
+      <div class="list" id="client-list"></div>
+    </section>
+
+    <section class="view" id="v-more" aria-label="Add">
+      <h2>Add to the <i>diary</i></h2>
+      <form class="card form" id="add-form">
+        <h3>Phone or walk-in booking</h3>
+        <label><span>Service</span><select name="service" id="add-service"></select></label>
+        <div class="row2"><label><span>Day</span><input type="date" name="day" required></label><label><span>Time</span><input type="time" name="time" step="900" required></label></div>
+        <label><span>Name</span><input name="name" required maxlength="80"></label>
+        <label><span>Cellphone</span><input name="phone" type="tel" inputmode="tel" required></label>
+        <label><span>Note</span><input name="notes" maxlength="300"></label>
+        <button class="b b-dark" type="submit">Add booking</button>
+      </form>
+      <form class="card form" id="block-form">
+        <h3>Block out time</h3>
+        <div class="row2"><label><span>From</span><input type="datetime-local" name="start" step="900" required></label><label><span>To</span><input type="datetime-local" name="end" step="900" required></label></div>
+        <label><span>Reason</span><input name="reason" maxlength="120" placeholder="Training, lunch, leave…"></label>
+        <button class="b b-dark" type="submit">Block it</button>
+      </form>
+    </section>
+  </main>
+
+  <nav class="tabs" aria-label="Sections">
+    <button type="button" class="is-on" data-view="v-day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Diary</button>
+    <button type="button" data-view="v-infills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13c3-5 6-7 9-7s6 2 9 7"/><path d="M6 11l-1.5-3M10 8.5L9.5 5M14 8.5l.5-3.5M18 11l1.5-3"/></svg>Infills<span class="dot" id="infill-dot" hidden></span></button>
+    <button type="button" data-view="v-clients"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Clients</button>
+    <button type="button" data-view="v-more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>Add</button>
+  </nav>
+</div>
+
+<div class="sheet-bg" id="sheet-bg" hidden></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+  <div class="sheet-grip"></div>
+  <header class="sheet-head"><h2 id="sheet-title"></h2><button class="icon-b" type="button" id="sheet-x" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+  <div class="sheet-body" id="sheet-body"></div>
+</section>
+
+<p class="toast" id="toast" role="status" hidden></p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "_readme": "Every studio fact the website and booking use lives here. null = not supplied by the client yet; the site hides it. Fields under _confirm still need the client's sign-off.",
+  "_confirm": ["services (names, times, prices)", "phone", "whatsapp", "email", "area", "address", "hours", "instagram", "depositRands", "cancellationHours", "beds"],
+  "name": "Lash by Design",
+  "established": 2022,
+  "domain": "lashbydesign.co.za",
+  "phone": null,
+  "whatsapp": null,
+  "email": null,
+  "area": null,
+  "address": null,
+  "instagram": null,
+  "hoursConfirmed": false,
+  "hours": {
+    "mon": null,
+    "tue": ["09:00", "18:00"],
+    "wed": ["09:00", "18:00"],
+    "thu": ["09:00", "18:00"],
+    "fri": ["09:00", "18:00"],
+    "sat": ["08:00", "14:00"],
+    "sun": null
+  },
+  "slotStepMinutes": 30,
+  "bookAheadDays": 42,
+  "minNoticeHours": 12,
+  "beds": 1,
+  "depositRands": null,
+  "cancellationHours": 48,
+  "patchTest": {"minutes": 15, "hoursBefore": 24},
+  "infillAfterDays": [14, 21],
+  "services": [
+    {"id": "classic", "group": "Full sets", "name": "Classic full set", "minutes": 120, "price": null,
+     "blurb": "One extension on each natural lash. Clean, defined and natural, like your lashes on their best day."},
+    {"id": "hybrid", "group": "Full sets", "name": "Hybrid full set", "minutes": 150, "price": null,
+     "blurb": "Classic lashes mixed with soft volume fans. Texture and fullness without going all the way."},
+    {"id": "volume", "group": "Full sets", "name": "Volume full set", "minutes": 150, "price": null,
+     "blurb": "Featherlight handmade fans on every lash for a full, fluffy, statement look."},
+    {"id": "infill", "group": "Infills", "name": "Infill", "minutes": 60, "price": null, "infill": true,
+     "blurb": "Every 2 to 3 weeks, we replace the lashes you've naturally shed so your set stays full."},
+    {"id": "lift", "group": "Lift and tint", "name": "Lash lift and tint", "minutes": 60, "price": null, "noPatchTest": false,
+     "blurb": "Your own lashes, lifted and darkened. No extensions, no upkeep, lasting about six to eight weeks."}
+  ]
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- AXIEL primary mark — axis arrow + three forces (dots) -->
+  <g fill="none" stroke="#0B0B0C" stroke-width="17" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150,110 L95,230"/>
+    <path d="M150,110 L205,230"/>
+    <path d="M150,110 L150,230"/>
+  </g>
+  <circle cx="150" cy="63" r="15" fill="#0B0B0C"/>
+  <circle cx="53" cy="230" r="15" fill="#0B0B0C"/>
+  <circle cx="247" cy="230" r="15" fill="#0B0B0C"/>
+</svg>

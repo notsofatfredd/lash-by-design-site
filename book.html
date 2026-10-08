@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en-ZA" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book your set | Lash by Design</title>
+<meta name="description" content="Book your lash extensions, infill or lash lift with Lash by Design. Pick your set, choose a time, done.">
+<meta name="theme-color" content="#FFF8FA">
+<link rel="canonical" href="https://lashbydesign.co.za/book.html">
+<link rel="icon" href="assets/img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/book.css">
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/book.js" defer></script>
+</head>
+<body class="book-page">
+<a class="skip" href="#main">Skip to booking</a>
+
+<header class="top is-solid" id="top">
+  <div class="wrap">
+    <a class="top-logo" href="./" aria-label="Lash by Design home"><img src="assets/img/logo/lash-by-design-horizontal-raspberry.png" alt="Lash by Design" width="900" height="214"></a>
+    <a class="btn btn-line top-back" href="./">Back to site</a>
+  </div>
+</header>
+
+<main id="main" class="bk">
+  <div class="wrap bk-wrap">
+    <div class="bk-flow">
+      <p class="eyebrow">Book online</p>
+      <h1 class="bk-title">Your set, <i>your</i> time.</h1>
+      <p class="bk-preview" id="bk-preview" hidden>Preview mode: this page is showing sample times and won’t save a booking. Live bookings open once the site is on lashbydesign.co.za.</p>
+      <p class="bk-banner" id="bk-banner" role="status" hidden></p>
+
+      <form id="bk-form" novalidate>
+        <section class="bk-step is-open" data-step="set" aria-labelledby="st-set">
+          <header class="bk-step-head"><span class="bk-n">1</span><h2 id="st-set">Choose your set</h2><button type="button" class="bk-edit" data-edit="set">Change</button></header>
+          <div class="bk-step-body">
+            <div class="bk-sets" id="bk-sets" role="radiogroup" aria-labelledby="st-set"></div>
+            <p class="bk-note" id="bk-price-note" hidden>Prices are confirmed when you book.</p>
+          </div>
+          <p class="bk-chosen" id="ch-set"></p>
+        </section>
+
+        <section class="bk-step" data-step="visit" aria-labelledby="st-visit">
+          <header class="bk-step-head"><span class="bk-n">2</span><h2 id="st-visit">Have you been to us before?</h2><button type="button" class="bk-edit" data-edit="visit">Change</button></header>
+          <div class="bk-step-body">
+            <div class="bk-choice" role="radiogroup" aria-labelledby="st-visit">
+              <button type="button" class="bk-pill" data-visit="new"><b>First visit</b><span>We’ll book a quick patch test first</span></button>
+              <button type="button" class="bk-pill" data-visit="back"><b>I’ve been before</b><span>Straight to choosing a time</span></button>
+            </div>
+          </div>
+          <p class="bk-chosen" id="ch-visit"></p>
+        </section>
+
+        <section class="bk-step" data-step="when" aria-labelledby="st-when">
+          <header class="bk-step-head"><span class="bk-n">3</span><h2 id="st-when">Pick a day and time</h2><button type="button" class="bk-edit" data-edit="when">Change</button></header>
+          <div class="bk-step-body">
+            <div class="bk-days" id="bk-days" aria-label="Days with openings"></div>
+            <div class="bk-times" id="bk-times" aria-live="polite"></div>
+          </div>
+          <p class="bk-chosen" id="ch-when"></p>
+        </section>
+
+        <section class="bk-step" data-step="patch" aria-labelledby="st-patch" hidden>
+          <header class="bk-step-head"><span class="bk-n">4</span><h2 id="st-patch">Book your patch test</h2><button type="button" class="bk-edit" data-edit="patch">Change</button></header>
+          <div class="bk-step-body">
+            <p class="bk-note" id="bk-patch-copy">A 15-minute patch test, at least 24 hours before your set, so we know the adhesive suits you.</p>
+            <div class="bk-days" id="bk-pdays" aria-label="Days for your patch test"></div>
+            <div class="bk-times" id="bk-ptimes" aria-live="polite"></div>
+          </div>
+          <p class="bk-chosen" id="ch-patch"></p>
+        </section>
+
+        <section class="bk-step" data-step="details" aria-labelledby="st-details">
+          <header class="bk-step-head"><span class="bk-n" id="n-details">4</span><h2 id="st-details">Your details</h2></header>
+          <div class="bk-step-body">
+            <div class="bk-fields">
+              <label class="bk-field"><span>Name</span><input name="name" autocomplete="name" required maxlength="80"></label>
+              <label class="bk-field"><span>Cellphone</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="082 123 4567"></label>
+              <label class="bk-field bk-wide"><span>Email <em>(optional)</em></span><input name="email" type="email" autocomplete="email" maxlength="120"></label>
+              <label class="bk-field bk-wide"><span>Anything we should know? <em>(optional)</em></span><textarea name="notes" rows="3" maxlength="600" placeholder="Sensitive eyes, a look you love, contact lenses…"></textarea></label>
+              <label class="bk-hp" aria-hidden="true">Website <input name="website" tabindex="-1" autocomplete="off"></label>
+              <label class="bk-check bk-wide"><input type="checkbox" name="consent" required> <span id="bk-terms">I agree to the booking terms: please give us at least 48 hours’ notice to move or cancel.</span></label>
+            </div>
+            <button class="btn btn-solid bk-submit" type="submit" id="bk-submit">Confirm booking</button>
+            <p class="bk-error" id="bk-error" role="alert" hidden></p>
+          </div>
+        </section>
+      </form>
+
+      <section class="bk-done" id="bk-done" hidden tabindex="-1" aria-labelledby="done-title">
+        <img src="assets/img/logo/lash-by-design-icon-raspberry.png" alt="" width="600" height="620">
+        <p class="eyebrow">Booked</p>
+        <h2 id="done-title">See you <i>soon.</i></h2>
+        <p class="bk-done-copy" id="done-copy"></p>
+        <dl class="bk-done-list" id="done-list"></dl>
+        <div class="bk-done-cta" id="done-cta"></div>
+        <p class="bk-note">Come with clean lashes: no mascara, no oil-based cleanser on the day.</p>
+      </section>
+    </div>
+
+    <aside class="bk-sum" aria-label="Your booking">
+      <div class="bk-sum-card">
+        <p class="eyebrow">Your booking</p>
+        <dl id="sum">
+          <div><dt>Set</dt><dd id="sum-set">Not chosen yet</dd></div>
+          <div><dt>When</dt><dd id="sum-when">Not chosen yet</dd></div>
+          <div id="sum-patch-row" hidden><dt>Patch test</dt><dd id="sum-patch">Not chosen yet</dd></div>
+          <div id="sum-price-row" hidden><dt>Price</dt><dd id="sum-price"></dd></div>
+          <div id="sum-dep-row" hidden><dt>Deposit</dt><dd id="sum-dep"></dd></div>
+        </dl>
+        <p class="bk-sum-foot" id="sum-foot">You’ll get your booking reference as soon as you confirm.</p>
+      </div>
+      <img class="bk-sum-img" src="assets/img/photo/soft-glam-portrait.webp" alt="" width="1180" height="787" loading="lazy">
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="assets/img/logo/lash-by-design-icon-raspberry.png" alt="" aria-hidden="true" width="600" height="620" loading="lazy">
+      <span class="footer-brand-copy"><strong>Lash by Design</strong><span id="footer-sub">Lash studio &middot; Est. 2022</span></span>
+    </div>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="./">Home</a>
+      <a href="./#aftercare">Aftercare</a>
+      <a id="footer-ig" href="#" target="_blank" rel="noopener noreferrer" hidden>Instagram</a>
+      <a href="#top">Back to top</a>
+    </nav>
+  </div>
+  <div class="footer-credit-row">
+    <a class="axiel-credit" href="https://axiel.co.za/" target="_blank" rel="noopener noreferrer" aria-label="Website by Axiel, built on Atlas OS">
+      <img src="assets/img/axiel-mark.svg" alt="" width="300" height="300" loading="lazy" aria-hidden="true">
+      <span class="axiel-credit-copy"><span class="axiel-credit-label">Website by</span><span class="axiel-credit-brand">AXIEL <b>/ ATLAS OS</b></span></span>
+    </a>
+  </div>
+</footer>
+</body>
+</html>

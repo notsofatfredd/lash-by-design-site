@@ -1,0 +1,4 @@
+api/secret.php
+data/*
+!data/.htaccess
+*.sqlite*

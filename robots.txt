@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /owner/
+Disallow: /api/
+Sitemap: https://lashbydesign.co.za/sitemap.xml
